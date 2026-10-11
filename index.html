@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tamsa Health — preventive and functional medicine</title>
+<meta name="description" content="Long check-ups, lab panels explained in plain words, nutrition and health coaching. Membership plans and a free intro call at Tamsa Health.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23FF6A2B'/%3E%3Cpath d='M9 19a7 7 0 0 1 14 0z' fill='%230C1838'/%3E%3Cpath d='M6 19h20' stroke='%230C1838' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Figtree:wght@400..800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-lab.webp">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+  :root {
+    --ink: #0C1838;
+    --ink-2: #070F26;
+    --cobalt: #2B4CFF;
+    --cobalt-soft: #DCE2FF;
+    --tang: #FF6A2B;
+    --tang-edge: #B5390A;
+    --tang-soft: #FFE3D4;
+    --sky: #EEF1FF;
+    --card: #FFFFFF;
+    --muted: #4A5578;
+    --line: #C7CFEF;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    --pad: clamp(16px, 4vw, 56px);
+    --max: 1280px;
+    --r: 28px;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --pop: cubic-bezier(.19, 1, .22, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+  body { font: 400 17px/1.6 var(--sans); color: var(--ink); background: var(--sky); -webkit-font-smoothing: antialiased; }
+  main { overflow-x: clip; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 6px; }
+  .dark :focus-visible, .hero :focus-visible, .bar:not(.solid) :focus-visible { outline-color: var(--tang); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: fixed; left: 16px; top: -80px; z-index: 100; background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 12px; text-decoration: none; font-weight: 700; }
+  .skip:focus { top: 16px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+  /* Type */
+  h1, h2, h3 { font-family: var(--serif); font-variation-settings: "SOFT" 100; font-weight: 400; letter-spacing: -.02em; }
+  h2 { font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; text-wrap: balance; }
+  h2 em, h1 em { font-style: italic; font-weight: 340; color: var(--cobalt); }
+  .dark h2 em, .hero h1 em { color: var(--tang); }
+  .lead { font-size: clamp(17px, 1.35vw, 19px); color: var(--muted); max-width: 54ch; margin-top: 18px; }
+  .dark .lead { color: rgba(255,255,255,.78); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; font: 700 12.5px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; border: 1.5px solid currentColor; border-radius: 99px; padding: 8px 13px 7px; }
+  .pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--tang); }
+  .sec { padding: clamp(80px, 10vw, 140px) 0; }
+  .sec.tight { padding-top: 0; }
+  .sec-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: end; gap: 24px 64px; margin-bottom: clamp(36px, 5vw, 64px); }
+  .sec-head h2 { margin-top: 18px; max-width: 18ch; }
+  .sec-head > :last-child:not(:first-child) { justify-self: end; }
+  .sec-head > .lead { margin-top: 0; max-width: 44ch; }
+
+  /* Buttons: chunky pill with a darker edge that presses down */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 26px; border: 0; border-radius: 99px; background: var(--tang); color: var(--ink); font: 700 16px/1.2 var(--sans); text-decoration: none; cursor: pointer; box-shadow: 0 5px 0 var(--tang-edge); transform: translateY(0); transition: transform .4s var(--pop), box-shadow .4s var(--pop), background-color .2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--tang-edge); }
+  .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--tang-edge); transition-duration: .08s; }
+  .btn .arr { transition: transform .4s var(--pop); }
+  .btn:hover .arr { transform: translateX(4px); }
+  .btn.ink { background: var(--ink); color: #fff; box-shadow: 0 5px 0 #000; }
+  .btn.ink:hover { box-shadow: 0 7px 0 #000; }
+  .btn.white { background: #fff; color: var(--ink); box-shadow: 0 5px 0 var(--line); }
+  .btn.white:hover { box-shadow: 0 7px 0 var(--line); }
+  .btn.out { background: #fff; color: var(--ink); border: 2px solid var(--ink); box-shadow: 0 5px 0 var(--ink); }
+  .btn.out:hover { background: var(--tang-soft); box-shadow: 0 7px 0 var(--ink); }
+  .btn.out:active { box-shadow: 0 1px 0 var(--ink); }
+  .btn[disabled] { opacity: .65; cursor: progress; transform: none; }
+  .link { font-weight: 700; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 5px; transition: text-underline-offset .3s var(--pop); }
+  .link:hover { text-underline-offset: 8px; }
+
+  /* Header: floating pill, hides on the way down, back on the way up */
+  .bar { position: fixed; top: 14px; left: var(--pad); right: var(--pad); z-index: 50; max-width: calc(var(--max) - 2 * 24px); margin: 0 auto; display: flex; align-items: center; gap: 24px; height: 68px; padding: 0 10px 0 22px; border-radius: 99px; color: #fff; background: rgba(12, 24, 56, .28); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.18); transition: transform .5s var(--ease), background-color .35s, color .35s, border-color .35s, box-shadow .35s; }
+  .bar.solid { background: rgba(255,255,255,.94); color: var(--ink); border-color: var(--line); box-shadow: 0 10px 30px -18px rgba(12,24,56,.45); }
+  .bar.hide { transform: translateY(-130%); }
+  .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 600 26px/1 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.03em; }
+  .logo svg { width: 30px; height: 30px; flex: none; }
+  .logo small { font: 700 10.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: .75; margin-left: 2px; align-self: flex-end; padding-bottom: 4px; }
+  .menu { margin-left: auto; }
+  .nav { display: flex; gap: 4px; list-style: none; }
+  .nav a { display: block; padding: 10px 14px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 15.5px; transition: background-color .25s; }
+  .nav a:hover { background: rgba(255,255,255,.16); }
+  .bar.solid .nav a:hover { background: var(--sky); }
+  .bar .btn { min-height: 48px; padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 0 var(--tang-edge); }
+  .bar .btn:hover { box-shadow: 0 5px 0 var(--tang-edge); }
+  .menu-btn { display: none; margin-left: auto; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid currentColor; background: transparent; cursor: pointer; place-items: center; }
+  .menu-btn span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: transform .3s var(--ease), background-color .2s; }
+  .menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: currentColor; border-radius: 2px; transition: transform .3s var(--ease); }
+  .menu-btn span::before { top: -6px; } .menu-btn span::after { top: 6px; }
+  .menu-btn[aria-expanded="true"] span { background: transparent; }
+  .menu-btn[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span::after { transform: translateY(-6px) rotate(-45deg); }
+
+  /* Hero: dark and cinematic, pinned while the next sheet slides over it */
+  .stage { position: relative; }
+  .hero { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 640px; color: #fff; overflow: hidden; isolation: isolate;
+    background: radial-gradient(55% 70% at 78% 28%, rgba(255,106,43,.42), transparent 62%), radial-gradient(60% 70% at 62% 100%, rgba(43,76,255,.55), transparent 70%), var(--ink-2); }
+  .hero-media { position: absolute; inset: 0; z-index: -2; }
+  .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; color: transparent; animation: drift 18s ease-in-out infinite alternate; }
+  .hero-media img + img { opacity: 0; animation: drift 18s ease-in-out infinite alternate, cycle 18s linear infinite both; }
+  .hero-media img:nth-child(2) { animation-delay: 0s, 6s; }
+  .hero-media img:nth-child(3) { animation-delay: 0s, 12s; }
+  @keyframes drift { from { transform: scale(1.1); } to { transform: scale(1); } }
+  @keyframes cycle { 0% { opacity: 0; } 6% { opacity: 1; } 33% { opacity: 1; } 40% { opacity: 0; } 100% { opacity: 0; } }
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7,15,38,.9) 0%, rgba(7,15,38,.55) 48%, rgba(7,15,38,.15) 100%), linear-gradient(0deg, rgba(7,15,38,.75) 0%, transparent 45%); }
+  .hero .wrap { height: 100%; display: grid; grid-template-columns: 1fr 272px; gap: 40px; align-items: end; padding-top: 120px; padding-bottom: clamp(72px, 9vh, 112px); }
+  .hero h1 { font-size: clamp(50px, 7.6vw, 116px); line-height: .96; font-weight: 360; letter-spacing: -.035em; max-width: 11ch; margin-top: 22px; }
+  .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .03em .12em; margin: 0 -.03em -.12em; }
+  .hero h1 .w > span { display: inline-block; }
+  .js .hero h1 .w > span { transform: translateY(105%); animation: rise 1s var(--ease) forwards; animation-delay: calc(.15s + var(--i) * .07s); }
+  @keyframes rise { to { transform: none; } }
+  .hero p { font-size: clamp(17px, 1.4vw, 20px); max-width: 46ch; margin-top: 22px; color: rgba(255,255,255,.86); }
+  .hero .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: 34px; }
+  .hero .pill { color: rgba(255,255,255,.9); }
+  .ticks { align-self: start; margin-top: 8vh; list-style: none; display: grid; gap: 22px; padding: 20px 22px 18px; border-radius: 24px; background: rgba(7,15,38,.55); border: 1px solid rgba(255,255,255,.14); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  .ticks li { position: relative; padding-top: 14px; }
+  .ticks li::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px; background: rgba(255,255,255,.28); }
+  .ticks li::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 1.5px; background: var(--tang); transform-origin: left; transition: transform 1.5s ease-in-out; }
+  .js .ticks li::after { transform: scaleX(0); }
+  .js .ticks.go li::after { transform: scaleX(1); }
+  .ticks li:nth-child(2)::after { transition-delay: .25s; } .ticks li:nth-child(3)::after { transition-delay: .5s; }
+  .ticks li > span { display: block; font-size: 14px; color: rgba(255,255,255,.85); }
+  .ticks b { display: flex; justify-content: space-between; align-items: baseline; font: 400 44px/1.1 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.02em; margin-top: 4px; }
+  .ticks b small { font: 600 14px var(--sans); letter-spacing: 0; color: rgba(255,255,255,.75); }
+  .scroll-cue { position: absolute; left: 50%; bottom: 22px; width: 26px; height: 40px; margin-left: -13px; border: 1.5px solid rgba(255,255,255,.5); border-radius: 99px; }
+  .scroll-cue::after { content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 4px; background: #fff; animation: cue 1.8s var(--ease) infinite; }
+  @keyframes cue { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }
+
+  /* Sheet that slides over the hero */
+  .sheet { position: relative; z-index: 2; background: var(--sky); border-radius: 36px 36px 0 0; margin-top: -36px; }
+
+  /* Start here: two paths */
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .card { background: var(--card); border: 2px solid var(--ink); border-radius: var(--r); box-shadow: 0 6px 0 var(--ink); }
+  .path { display: flex; flex-direction: column; overflow: hidden; }
+  .path .ph { aspect-ratio: 16 / 9; background: var(--cobalt-soft); position: relative; border-bottom: 2px solid var(--ink); }
+  .path .ph img { width: 100%; height: 100%; object-fit: cover; color: transparent; }
+  .path .ph .pill { position: absolute; left: 18px; top: 18px; background: #fff; color: var(--ink); border-color: var(--ink); }
+  .path .body { padding: 28px 30px 32px; display: flex; flex-direction: column; flex: 1; }
+  .path h3 { font-size: clamp(26px, 2.3vw, 32px); line-height: 1.12; }
+  .path p { color: var(--muted); margin-top: 12px; }
+  .path .meta { font-size: 14.5px; font-weight: 600; color: var(--ink); margin: 14px 0 26px; }
+  .path .btn { margin-top: auto; align-self: flex-start; }
+  .quiz { background: var(--cobalt); color: #fff; }
+  .quiz .body { padding: 30px 30px 32px; }
+  .quiz .pill { color: #fff; align-self: flex-start; }
+  .quiz h3 { margin-top: 18px; }
+  .quiz fieldset { border: 0; margin-top: 18px; }
+  .quiz legend { font-size: 15px; color: rgba(255,255,255,.9); margin-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+  .chips label { position: relative; cursor: pointer; }
+  .chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chips span { display: inline-block; padding: 10px 16px; border-radius: 99px; border: 1.5px solid currentColor; font-weight: 600; font-size: 15px; line-height: 1.2; transition: background-color .25s, color .25s, transform .4s var(--pop), box-shadow .4s var(--pop); }
+  .chips label:hover span { transform: translateY(-2px); }
+  .chips input:checked + span { background: var(--tang); color: var(--ink); border-color: var(--ink); box-shadow: 0 3px 0 var(--ink); }
+  .chips input:focus-visible + span { outline: 3px solid var(--tang); outline-offset: 3px; }
+  .quiz .chips span { border-color: rgba(255,255,255,.7); }
+  .result { margin-top: 22px; background: #fff; color: var(--ink); border-radius: 20px; padding: 20px 22px; display: grid; grid-template-columns: 1fr auto; gap: 6px 18px; align-items: center; border: 2px solid var(--ink); }
+  .result small { grid-column: 1 / -1; font-weight: 700; font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--cobalt); }
+  .result strong { font: 500 23px/1.15 var(--serif); font-variation-settings: "SOFT" 100; }
+  .result p { grid-column: 1; color: var(--muted); margin: 0; font-size: 15.5px; }
+  .result .btn { grid-column: 2; grid-row: 2 / 4; min-height: 48px; padding: 12px 20px; }
+  .result.flash { animation: flash .6s var(--ease); }
+  @keyframes flash { from { transform: translateY(6px); opacity: .4; } to { transform: none; opacity: 1; } }
+
+  /* Care: app-like bento */
+  .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
+  .tile { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 30px; min-height: 340px; transition: transform .4s var(--pop), box-shadow .4s var(--pop); }
+  .tile:hover { transform: translateY(-4px); box-shadow: 0 10px 0 var(--ink); }
+  .tile h3 { font-size: clamp(26px, 2.2vw, 32px); line-height: 1.1; }
+  .tile p { margin-top: 10px; color: var(--muted); max-width: 44ch; }
+  .tile .go { margin-top: auto; padding-top: 22px; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; text-decoration: none; align-self: flex-start; }
+  .tile .go span { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid currentColor; transition: transform .4s var(--pop), background-color .25s, color .25s; }
+  .tile .go:hover span { transform: rotate(-45deg); background: var(--ink); color: #fff; }
+  .t-check { grid-column: span 7; display: grid; grid-template-columns: 1fr 1.05fr; gap: 28px; }
+  .t-check .txt { display: flex; flex-direction: column; }
+  .t-labs { grid-column: span 5; background: var(--tang); }
+  .t-labs p { color: var(--ink); }
+  .t-food, .t-coach, .t-sleep { grid-column: span 4; }
+  .t-photo { padding: 0; }
+  .t-photo .ph { aspect-ratio: 4 / 3; background: var(--tang-soft); border-bottom: 2px solid var(--ink); }
+  .t-coach .ph { background: var(--cobalt-soft); }
+  .t-photo .ph img { width: 100%; height: 100%; object-fit: cover; color: transparent; transition: transform .8s var(--ease); }
+  .t-photo:hover .ph img { transform: scale(1.05); }
+  .t-photo .txt { padding: 24px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+  .t-sleep { background: var(--cobalt); color: #fff; }
+  .t-sleep p { color: rgba(255,255,255,.9); }
+  .t-sleep .go span { border-color: #fff; }
+  .t-sleep .go:hover span { background: #fff; color: var(--ink); }
+  .report { background: var(--sky); border: 1.5px solid var(--line); border-radius: 20px; padding: 18px; align-self: start; font-size: 14px; }
+  .report header { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .report header i { font-style: normal; background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 3px 9px; letter-spacing: 0; text-transform: none; font-weight: 600; }
+  .mk { background: #fff; border-radius: 14px; padding: 12px 14px; }
+  .mk + .mk { margin-top: 8px; }
+  .mk-top { display: flex; justify-content: space-between; gap: 10px; font-weight: 700; }
+  .mk-top em { font-style: normal; font-size: 12.5px; padding: 2px 9px; border-radius: 99px; background: var(--tang-soft); color: #8A2C06; white-space: nowrap; }
+  .mk-top em.ok { background: #D9F5E6; color: #0E6B3C; }
+  .mk-top em.watch { background: var(--cobalt-soft); color: #1B32B8; }
+  .scale { position: relative; height: 8px; border-radius: 8px; margin: 10px 0 8px; background: linear-gradient(90deg, var(--tang-soft) 0 25%, #BFEBD3 25% 75%, var(--cobalt-soft) 75%); }
+  .scale i { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--ink); left: var(--x); transition: left 1.2s var(--ease); }
+  .js .report:not(.in) .scale i { left: 50%; }
+  .mk p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--muted); }
+  .big { font: 350 clamp(92px, 10vw, 150px)/.9 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.05em; margin: 4px 0 6px; }
+  .big + strong { font-size: 19px; }
+  .t-labs .chips { margin-top: 18px; gap: 8px; }
+  .t-labs .chips span { font-size: 13.5px; padding: 6px 12px; border-color: var(--ink); }
+  .ring { width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center; margin: 4px 0 22px; background: conic-gradient(var(--tang) 0 calc(var(--p) * 1%), rgba(255,255,255,.22) 0); position: relative; --p: 82; }
+  .ring::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: var(--cobalt); }
+  .ring span { position: relative; text-align: center; font-size: 12.5px; line-height: 1.2; color: rgba(255,255,255,.9); }
+  .ring b { display: block; font: 400 28px/1 var(--serif); color: #fff; margin-bottom: 2px; }
+
+  /* Pinned statements over a dark micro photo */
+  .seq { position: relative; height: 380vh; background: var(--ink-2); color: #fff; }
+  .seq-pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; isolation: isolate;
+    background: radial-gradient(40% 50% at 30% 30%, rgba(43,76,255,.55), transparent 70%), radial-gradient(40% 50% at 75% 70%, rgba(255,106,43,.45), transparent 70%), var(--ink-2); }
+  .seq-pin > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; color: transparent; transform: scale(var(--z, 1.12)); }
+  .seq-pin::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(70% 60% at 50% 50%, rgba(7,15,38,.62), rgba(7,15,38,.35)); }
+  .seq-count { position: absolute; top: 112px; left: 50%; transform: translateX(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.6); display: grid; place-items: center; font-weight: 700; font-size: 15px; }
+  .statements { list-style: none; position: relative; width: min(100% - 2 * var(--pad), 980px); height: 60vh; }
+  .statements li { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font: 320 clamp(32px, 4.6vw, 66px)/1.1 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.025em; text-wrap: balance; opacity: 0; transform: translateY(40px); filter: blur(6px); transition: opacity .7s var(--ease), transform .9s var(--ease), filter .7s var(--ease); }
+  .statements li.on { opacity: 1; transform: none; filter: none; }
+  .statements li.past { transform: translateY(-40px); }
+  .statements em { color: var(--tang); }
+  .seq-bar { position: absolute; left: 50%; bottom: 44px; width: min(360px, 60vw); height: 2px; margin-left: calc(min(360px, 60vw) / -2); background: rgba(255,255,255,.25); border-radius: 2px; overflow: hidden; }
+  .seq-bar i { position: absolute; inset: 0; background: var(--tang); transform-origin: left; transform: scaleX(var(--p, 0)); }
+  html:not(.js) .seq { height: auto; }
+  html:not(.js) .seq-pin { position: relative; height: auto; padding: 160px 0; }
+  html:not(.js) .statements { height: auto; display: grid; gap: 64px; }
+  html:not(.js) .statements li { position: static; opacity: 1; transform: none; filter: none; }
+  html:not(.js) .seq-count, html:not(.js) .seq-bar { display: none; }
+
+  /* How a visit works */
+  .visit-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .visit-photo { position: sticky; top: 110px; }
+  .visit-photo .ph { aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--cobalt-soft); border: 2px solid var(--ink); }
+  .visit-photo img { width: 100%; height: 100%; object-fit: cover; color: transparent; }
+  .slot { position: absolute; right: -18px; bottom: 34px; background: #fff; border: 2px solid var(--ink); border-radius: 20px; box-shadow: 0 5px 0 var(--ink); padding: 14px 18px; display: flex; gap: 14px; align-items: center; }
+  .slot .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--tang); box-shadow: 0 0 0 0 rgba(255,106,43,.6); animation: ping 2s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 12px rgba(255,106,43,0); } 100% { box-shadow: 0 0 0 0 rgba(255,106,43,0); } }
+  .slot small { display: block; font-size: 13px; color: var(--muted); }
+  .slot b { font: 500 21px/1.1 var(--serif); }
+  .steps { list-style: none; position: relative; padding-left: 34px; }
+  .steps::before, .steps::after { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: var(--line); border-radius: 2px; }
+  .steps::after { background: var(--tang); transform-origin: top; transform: scaleY(var(--p, 1)); }
+  .step { position: relative; padding: 4px 0 44px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before { content: ""; position: absolute; left: -34px; top: 10px; width: 16px; height: 16px; border-radius: 50%; background: var(--sky); border: 2px solid var(--ink); transition: background-color .4s, transform .4s var(--pop); }
+  .step.on::before { background: var(--tang); transform: scale(1.15); }
+  .step .num { font: 300 clamp(48px, 5vw, 72px)/1 var(--serif); font-variation-settings: "SOFT" 100; color: var(--cobalt); letter-spacing: -.04em; }
+  .step h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1.15; margin-top: 10px; }
+  .step p { color: var(--muted); margin-top: 8px; max-width: 52ch; }
+  .step .tag { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 13.5px; background: #fff; border: 1.5px solid var(--line); border-radius: 99px; padding: 6px 12px; }
+
+  /* Team */
+  .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .person .ph { aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: var(--cobalt-soft); }
+  .person:nth-child(even) .ph { background: var(--tang-soft); }
+  .person img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; color: transparent; transition: transform .8s var(--ease); }
+  .person:hover img { transform: scale(1.04); }
+  .person h3 { font: 700 19px/1.3 var(--sans); letter-spacing: 0; margin-top: 18px; }
+  .person .role { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cobalt); margin-top: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; list-style: none; }
+  .tags li { font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: #fff; border: 1px solid var(--line); }
+  .person p { color: var(--muted); font-size: 15.5px; margin-top: 12px; }
+
+  /* Plans */
+  .toggle { display: inline-flex; padding: 5px; background: #fff; border: 2px solid var(--ink); border-radius: 99px; }
+  .toggle button { border: 0; background: transparent; padding: 10px 18px; border-radius: 99px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background-color .3s, color .3s; }
+  .toggle button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .toggle button small { font-weight: 600; color: var(--tang-edge); margin-left: 4px; }
+  .toggle button[aria-pressed="true"] small { color: var(--tang); }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; padding-top: 30px; }
+  .plan { position: relative; padding: 32px 30px 34px; display: flex; flex-direction: column; }
+  .plan .pname { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .plan h3 { font-size: 30px; line-height: 1.1; }
+  .plan .badge { font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--tang); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 99px; padding: 5px 10px; white-space: nowrap; }
+  .plan .for { color: var(--muted); margin-top: 6px; }
+  .price { display: flex; align-items: baseline; gap: 8px; margin: 22px 0 4px; }
+  .price b { font: 400 60px/1 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.04em; }
+  .price span { color: var(--muted); font-weight: 600; }
+  .price-note { font-size: 14px; color: var(--muted); min-height: 1.6em; }
+  .plan ul { list-style: none; margin: 22px 0 30px; padding-top: 22px; border-top: 1.5px dashed var(--line); display: grid; gap: 11px; }
+  .plan li { position: relative; padding-left: 30px; }
+  .plan li::before { content: ""; position: absolute; left: 0; top: 4px; width: 19px; height: 19px; border-radius: 50%; background: var(--cobalt-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14.5 7' fill='none' stroke='%232B4CFF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+  .plan .btn { margin-top: auto; }
+  .plan.feat { background: var(--ink); color: #fff; }
+  .plan.feat .for, .plan.feat .price span, .plan.feat .price-note { color: rgba(255,255,255,.78); }
+  .plan.feat ul { border-color: rgba(255,255,255,.25); }
+  .plan.feat li::before { background-color: rgba(255,255,255,.14); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14.5 7' fill='none' stroke='%23FF6A2B' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .plan.feat::before, .plan.feat::after { content: ""; position: absolute; bottom: calc(100% + 2px); height: 14px; border: 2px solid var(--ink); border-bottom: 0; border-radius: 18px 18px 0 0; }
+  .plan.feat::before { left: 22px; right: 22px; background: var(--tang); }
+  .plan.feat::after { left: 44px; right: 44px; bottom: calc(100% + 16px); background: var(--cobalt); }
+  .fine { margin-top: 34px; font-size: 14.5px; color: var(--muted); max-width: 80ch; }
+
+  /* Reviews */
+  .rating { display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: center; background: #fff; border: 1.5px solid var(--line); border-radius: 22px; padding: 18px 26px; }
+  .rating div { display: flex; align-items: center; gap: 12px; }
+  .rating b { font: 400 44px/1 var(--serif); letter-spacing: -.03em; }
+  .rating span { font-size: 14px; color: var(--muted); line-height: 1.35; }
+  .stars { color: var(--tang-edge); letter-spacing: 2px; font-size: 17px; }
+  .rv-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 26px; }
+  .rv-nav { display: flex; gap: 10px; }
+  .rv-nav button { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--ink); background: #fff; cursor: pointer; font-size: 20px; box-shadow: 0 3px 0 var(--ink); transition: transform .4s var(--pop), box-shadow .4s var(--pop), background-color .2s; }
+  .rv-nav button:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ink); background: var(--tang); }
+  .rv-nav button:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ink); }
+  .track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 22px) / 3); gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 10px; }
+  .track::-webkit-scrollbar { display: none; }
+  .review { scroll-snap-align: start; padding: 28px; display: flex; flex-direction: column; box-shadow: 0 5px 0 var(--ink); }
+  .review h3 { font-size: 23px; line-height: 1.2; margin-top: 12px; }
+  .review blockquote { margin-top: 10px; color: var(--muted); }
+  .review footer { margin-top: auto; padding-top: 20px; display: flex; align-items: center; gap: 12px; font-size: 14.5px; }
+  .review footer i { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--cobalt-soft); color: var(--cobalt); font: 600 17px var(--serif); font-style: normal; }
+  .review:nth-child(3n+2) footer i { background: var(--tang-soft); color: var(--tang-edge); }
+  .review footer b { display: block; }
+  .review footer span { color: var(--muted); }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .faq-side { position: sticky; top: 120px; }
+  .faq-side .help { margin-top: 30px; padding: 22px 24px; border-radius: 22px; background: #fff; border: 1.5px solid var(--line); }
+  .faq-side .help p { color: var(--muted); font-size: 15.5px; margin-bottom: 14px; }
+  details { border-bottom: 1.5px solid var(--line); }
+  details:first-child { border-top: 1.5px solid var(--line); }
+  summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: center; padding: 22px 0; }
+  summary::-webkit-details-marker { display: none; }
+  summary small { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cobalt); }
+  summary span { grid-column: 1; font: 400 clamp(21px, 1.9vw, 25px)/1.25 var(--serif); font-variation-settings: "SOFT" 100; }
+  summary::after { content: ""; grid-column: 2; grid-row: 1 / 3; width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--ink); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 4v12M4 10h12' stroke='%230C1838' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / 16px no-repeat; transition: transform .4s var(--pop), background-color .25s; }
+  details[open] summary::after { transform: rotate(135deg); background-color: var(--tang); }
+  summary:hover::after { background-color: var(--tang-soft); }
+  details[open] summary:hover::after { background-color: var(--tang); }
+  details .a { padding: 0 56px 24px 0; color: var(--muted); max-width: 62ch; }
+  details[open] .a { animation: open .5s var(--ease); }
+  @keyframes open { from { opacity: 0; transform: translateY(-6px); } }
+
+  /* Book */
+  .book { position: relative; overflow: hidden; background: var(--ink-2); color: #fff; isolation: isolate; }
+  .book::before { content: ""; position: absolute; inset: -20%; z-index: -1; background: radial-gradient(35% 40% at 15% 25%, rgba(43,76,255,.6), transparent 70%), radial-gradient(30% 35% at 90% 85%, rgba(255,106,43,.5), transparent 70%); animation: glow 16s ease-in-out infinite alternate; }
+  @keyframes glow { to { transform: translate(4%, -3%) rotate(4deg); } }
+  .book-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .book h2 { font-size: clamp(42px, 5.6vw, 84px); line-height: 1; max-width: 12ch; margin-top: 18px; }
+  .book .pill { color: #fff; }
+  .facts { list-style: none; margin-top: 34px; display: grid; gap: 12px; }
+  .facts li { display: flex; gap: 12px; align-items: center; }
+  .facts li::before { content: ""; width: 22px; height: 22px; flex: none; border-radius: 50%; background: var(--tang) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14.5 7' fill='none' stroke='%230C1838' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+  .reach { margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.2); display: grid; gap: 6px; }
+  .reach a { font: 400 26px/1.3 var(--serif); text-decoration: none; }
+  .reach a:hover { color: var(--tang); }
+  .reach span { color: rgba(255,255,255,.72); font-size: 15px; }
+  .form { color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: var(--r); box-shadow: 0 8px 0 var(--tang); padding: clamp(24px, 3.4vw, 40px); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
+  .form .full { grid-column: 1 / -1; }
+  .field label, .form legend { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .field label i, .form legend i { font-style: normal; font-weight: 500; color: var(--muted); }
+  .field input, .field select, .field textarea { width: 100%; min-height: 52px; padding: 13px 16px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--sky); font-size: 16px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
+  .field textarea { min-height: 112px; resize: vertical; }
+  .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5' fill='none' stroke='%230C1838' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 18px; padding-right: 44px; }
+  .field input:hover, .field select:hover, .field textarea:hover { border-color: #9AA6D8; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--cobalt); background: #fff; box-shadow: 0 0 0 4px rgba(43,76,255,.18); }
+  .hint { font-size: 13.5px; color: var(--muted); margin-top: 8px; display: flex; gap: 8px; }
+  .hint::before { content: "i"; flex: none; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font: italic 700 12px/1 var(--serif); background: var(--cobalt-soft); color: var(--cobalt); margin-top: 1px; }
+  .form fieldset { border: 0; }
+  .form .chips span { border-color: var(--line); background: var(--sky); font-size: 14.5px; padding: 9px 14px; }
+  .form .chips label:hover span { border-color: var(--ink); }
+  .form .chips input:checked + span { border-color: var(--ink); background: var(--tang); }
+  .form .chips input:focus-visible + span { outline-color: var(--cobalt); }
+  .send { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+  .send .btn { min-width: 200px; }
+  .send small { color: var(--muted); font-size: 13.5px; max-width: 34ch; }
+  .status { font-size: 15px; font-weight: 600; min-height: 0; }
+  .status:empty { display: none; }
+  .status.err { color: #B42318; background: #FEF0EE; border: 1.5px solid #F7C1BA; border-radius: 12px; padding: 10px 14px; }
+  .credit { font-size: 13px; color: var(--muted); }
+  .credit a { font-weight: 700; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .thanks { display: none; grid-column: 1 / -1; text-align: center; padding: 40px 10px; }
+  .thanks .tick { width: 72px; height: 72px; margin: 0 auto 18px; border-radius: 50%; background: var(--tang); border: 2px solid var(--ink); box-shadow: 0 5px 0 var(--ink); display: grid; place-items: center; }
+  .thanks h3 { font-size: 34px; line-height: 1.1; }
+  .thanks p { color: var(--muted); margin: 12px auto 24px; max-width: 40ch; }
+  .form.is-sent > :not(.thanks):not(.credit) { display: none; }
+  .form.is-sent .thanks { display: block; }
+  .form.is-sent .thanks .tick { animation: pop .6s var(--pop); }
+  @keyframes pop { from { transform: scale(.4); opacity: 0; } }
+
+  /* Footer */
+  .foot { background: var(--ink-2); color: #fff; padding: 80px 0 28px; overflow: hidden; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+  .foot h2 { font: 700 12.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 16px; }
+  .foot p, .foot li { color: rgba(255,255,255,.86); font-size: 15.5px; }
+  .foot ul { list-style: none; display: grid; gap: 6px; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--tang); }
+  .foot .logo { color: #fff; }
+  .hours li { display: flex; justify-content: space-between; gap: 16px; }
+  .foot .giant { font: 400 clamp(110px, 23vw, 360px)/.8 var(--serif); font-variation-settings: "SOFT" 100; letter-spacing: -.06em; color: #16224A; margin: 60px 0 0 -.04em; white-space: nowrap; user-select: none; }
+  .foot .giant span { color: var(--tang); }
+  .foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); font-size: 13.5px; color: rgba(255,255,255,.7); }
+  .foot-bottom a { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Mobile dock (bottom CTA) */
+  .dock { display: none; }
+
+  /* Reveal on scroll */
+  .js [data-r] { opacity: 0; translate: 0 32px; transition: opacity .55s var(--ease), translate .9s var(--ease), transform .4s var(--pop), box-shadow .4s var(--pop); transition-delay: calc(var(--d, 0) * 90ms), calc(var(--d, 0) * 90ms), 0s, 0s; }
+  .js [data-r].in { opacity: 1; translate: none; }
+
+  /* Responsive */
+  @media (max-width: 1180px) {
+    .nav a { padding: 10px 10px; font-size: 15px; }
+    .t-check { grid-template-columns: 1fr; }
+    .t-check .report { max-width: 460px; }
+    .track { grid-auto-columns: calc((100% - 22px) / 2); }
+    .result { grid-template-columns: 1fr; }
+    .result .btn { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
+  }
+  @media (max-width: 960px) and (min-width: 641px) {
+    .t-check { grid-template-columns: 1fr 1fr; }
+    .result { grid-template-columns: 1fr auto; }
+    .result .btn { grid-column: 2; grid-row: 2 / 4; margin-top: 0; }
+  }
+  @media (max-width: 960px) {
+    .bar { gap: 12px; height: 62px; padding-left: 18px; }
+    .bar .menu { display: none; }
+    .bar .head-cta { display: none; }
+    .menu-btn { display: grid; }
+    .bar.open { border-radius: 30px; height: auto; flex-wrap: wrap; padding-bottom: 14px; background: rgba(255,255,255,.98); color: var(--ink); }
+    .bar.open .logo { height: 60px; }
+    .bar.open .menu { display: block; width: 100%; order: 3; margin: 0; padding-top: 6px; border-top: 1px solid var(--line); }
+    .bar.open .nav { display: grid; gap: 2px; }
+    .bar.open .nav a { font-size: 19px; padding: 12px 6px; }
+    .bar.open .head-cta { display: flex; order: 4; width: 100%; }
+    .hero .wrap { grid-template-columns: 1fr; align-content: end; gap: 34px; }
+    .ticks { margin: 0; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 640px; padding: 0; border: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .hero::after { background: linear-gradient(0deg, rgba(7,15,38,.94) 0%, rgba(7,15,38,.82) 42%, rgba(7,15,38,.45) 72%, rgba(7,15,38,.25) 100%); }
+    .ticks b { font-size: 34px; }
+    .scroll-cue { display: none; }
+    .paths, .visit-grid, .faq-grid, .book-grid { grid-template-columns: 1fr; }
+    .visit-photo { position: relative; top: 0; max-width: 520px; }
+    .visit-photo .ph { aspect-ratio: 4 / 3; }
+    .slot { right: 16px; }
+    .faq-side { position: static; }
+    .t-check, .t-labs { grid-column: span 12; }
+    .t-food, .t-coach { grid-column: span 6; }
+    .t-sleep { grid-column: span 12; }
+    .team { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+    .plans { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; gap: 52px; }
+    .plan.feat { order: -1; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head > :last-child:not(:first-child) { justify-self: start; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .bar { top: 10px; left: 12px; right: 12px; height: 58px; padding: 0 6px 0 16px; }
+    .logo { font-size: 23px; }
+    .logo svg { width: 26px; height: 26px; }
+    .hero { min-height: 600px; }
+    .hero .wrap { padding-top: 96px; padding-bottom: 56px; }
+    .hero h1 { font-size: clamp(44px, 12.4vw, 60px); }
+    .hero p { margin-top: 16px; }
+    .hero .cta { margin-top: 24px; }
+    .ticks { gap: 12px; }
+    .hero .pill .loc { display: none; }
+    .ticks li > span { font-size: 12px; line-height: 1.3; }
+    .ticks b { font-size: 27px; }
+    .ticks b small { display: none; }
+    .sheet { border-radius: 26px 26px 0 0; margin-top: -26px; }
+    .path .body, .quiz .body { padding: 24px 22px 26px; }
+    .result { grid-template-columns: 1fr; }
+    .result .btn { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
+    .tile { padding: 24px; min-height: 0; }
+    .t-photo { padding: 0; }
+    .t-photo .txt { padding: 22px 24px 24px; }
+    .t-food, .t-coach { grid-column: span 12; }
+    .bento { gap: 18px; }
+    .team { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 16px; margin: 0 calc(var(--pad) * -1); padding: 0 var(--pad) 6px; scroll-padding: 0 var(--pad); }
+    .team::-webkit-scrollbar { display: none; }
+    .person { scroll-snap-align: start; }
+    .track { grid-auto-columns: 86%; gap: 16px; }
+    .rating { padding: 16px 20px; gap: 12px 24px; }
+    .rating b { font-size: 36px; }
+    .plan { padding: 26px 22px 28px; }
+    .price b { font-size: 52px; }
+    details .a { padding-right: 0; }
+    .form { grid-template-columns: 1fr; }
+    .form .btn { width: 100%; }
+    .send .btn { min-width: 0; }
+    .slot { right: 12px; bottom: 16px; padding: 10px 14px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 30px; }
+    .statements li { font-size: clamp(28px, 8vw, 38px); }
+    .seq-count { top: 96px; }
+    .js .dock { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; gap: 10px; transform: translateY(140%); transition: transform .5s var(--ease); }
+    .js .dock.show { transform: none; }
+    .dock .btn { flex: 1; box-shadow: 0 4px 0 var(--tang-edge), 0 14px 30px -10px rgba(7,15,38,.55); }
+    .dock .call { flex: none; width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid var(--ink); display: grid; place-items: center; box-shadow: 0 4px 0 var(--ink); color: var(--ink); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js [data-r] { opacity: 1; translate: none; }
+    .js .hero h1 .w > span { transform: none; }
+    .js .ticks li::after { transform: scaleX(1); }
+    .hero-media img + img { opacity: 0; }
+    .js .report:not(.in) .scale i { left: var(--x); }
+    .seq { height: auto; }
+    .seq-pin { position: relative; height: auto; padding: 160px 0; }
+    .statements { height: auto; display: grid; gap: 64px; }
+    .statements li { position: static; opacity: 1; transform: none; filter: none; }
+    .seq-count, .seq-bar { display: none; }
+    .seq-pin > img { transform: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar" id="bar">
+  <a class="logo" href="#top" aria-label="Tamsa Health, back to top">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#FF6A2B"/><path d="M9 19a7 7 0 0 1 14 0z" fill="#0C1838"/><path d="M6 19h20" stroke="#0C1838" stroke-width="2.4" stroke-linecap="round"/><path d="M10.5 23.5h11" stroke="#0C1838" stroke-width="2.4" stroke-linecap="round"/></svg>
+    tamsa<small>health</small>
+  </a>
+  <nav class="menu" id="menu" aria-label="Main">
+    <ul class="nav">
+      <li><a href="#care">Care</a></li>
+      <li><a href="#visit">How it works</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+  <a class="btn head-cta" href="#book">Book a free call <span class="arr" aria-hidden="true">→</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span></button>
+</header>
+
+<main id="main">
+  <div class="stage">
+    <section class="hero" id="top" aria-labelledby="hero-h">
+      <div class="hero-media" aria-hidden="true">
+        <img src="img/hero-lab.webp" alt="" width="1600" height="1067" fetchpriority="high">
+        <img src="img/hero-morning.webp" alt="" width="1600" height="1067" decoding="async">
+        <img src="img/hero-kitchen.webp" alt="" width="1600" height="1067" decoding="async">
+      </div>
+      <div class="wrap">
+        <div>
+          <span class="pill">Preventive &amp; functional medicine<span class="loc">&nbsp;· Fairview</span></span>
+          <h1 id="hero-h" data-split>Health you can <em>actually read.</em></h1>
+          <p>Long check-ups, lab panels explained in plain words, and a coach who answers your messages. Care for people who feel mostly fine and want to keep it that way.</p>
+          <div class="cta">
+            <a class="btn" href="#book">Book a free intro call <span class="arr" aria-hidden="true">→</span></a>
+            <a class="link" href="#plans">See membership plans</a>
+          </div>
+        </div>
+        <ul class="ticks" aria-label="Tamsa in numbers">
+          <li><span>Markers in the full lab panel</span><b><span data-count="86">86</span><small>markers</small></b></li>
+          <li><span>Minutes in your first visit</span><b><span data-count="90">90</span><small>min</small></b></li>
+          <li><span>Days until your results review</span><b><span data-count="7">7</span><small>days</small></b></li>
+        </ul>
+      </div>
+      <span class="scroll-cue" aria-hidden="true"></span>
+    </section>
+
+    <section class="sheet sec" id="start" aria-labelledby="start-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <div data-r>
+            <span class="pill">Start here</span>
+            <h2 id="start-h">Where would you like to <em>start?</em></h2>
+          </div>
+          <p class="lead" data-r style="--d:1">Some people arrive with a question, some with a folder of old results. Either is a good place to begin.</p>
+        </div>
+        <div class="paths">
+          <article class="card path" data-r>
+            <div class="ph">
+              <img src="img/room.webp" alt="A bright consultation room with a tangerine armchair, a round table and plants" width="1600" height="1067" loading="lazy">
+              <span class="pill">Not sure yet</span>
+            </div>
+            <div class="body">
+              <h3>Not sure what you need? Let's talk it through.</h3>
+              <p>A free 20-minute call with one of our clinicians. Tell us what's on your mind and we'll suggest a first step, or tell you honestly if you don't need us.</p>
+              <p class="meta">Phone or video · usually within two working days</p>
+              <a class="btn" href="#book" data-service="Free intro call">Book a free intro call <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card path quiz" data-r style="--d:1">
+            <div class="body">
+              <span class="pill">Know roughly what you want</span>
+              <h3>Pick a goal and see where you'd begin.</h3>
+              <fieldset>
+                <legend>What matters most to you right now?</legend>
+                <div class="chips" id="goals">
+                  <label><input type="radio" name="goal" value="checkup" checked data-title="The Baseline check-up" data-text="90 minutes with a physician, 86 lab markers and a written plan you keep." data-service="Baseline check-up"><span>A thorough check-up</span></label>
+                  <label><input type="radio" name="goal" value="labs" data-title="A results review" data-text="Bring results from the past year. We go through them with you, line by line, in 45 minutes." data-service="Results review"><span>Making sense of my labs</span></label>
+                  <label><input type="radio" name="goal" value="food" data-title="Nutrition sessions" data-text="Three sessions with a dietitian, built around food you already like." data-service="Nutrition"><span>Eating better</span></label>
+                  <label><input type="radio" name="goal" value="sleep" data-title="Sleep and energy coaching" data-text="Eight weeks of small changes, with a coach who checks in every week." data-service="Coaching"><span>Sleep and energy</span></label>
+                  <label><input type="radio" name="goal" value="age" data-title="Membership" data-text="A yearly check-up, follow-up labs and a coach, in one monthly plan." data-service="Membership"><span>Staying strong as I age</span></label>
+                </div>
+              </fieldset>
+              <div class="result" id="result" aria-live="polite">
+                <small>We'd suggest</small>
+                <strong data-rt>The Baseline check-up</strong>
+                <p data-rx>90 minutes with a physician, 86 lab markers and a written plan you keep.</p>
+                <a class="btn" href="#book" data-service="Baseline check-up" data-rb>Book this <span class="arr" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="sec tight" id="care" aria-labelledby="care-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-r>
+          <span class="pill">What we do</span>
+          <h2 id="care-h">Five kinds of care, one team that <em>talks to each other.</em></h2>
+        </div>
+        <p class="lead" data-r style="--d:1">Your physician, dietitian and coach read the same notes, so you never have to tell your story twice.</p>
+      </div>
+      <div class="bento">
+        <article class="card tile t-check" data-r>
+          <div class="txt">
+            <h3>The long check-up</h3>
+            <p>Ninety minutes with a physician: your history, a full exam, and blood taken in the same room. Then a written summary you can actually read.</p>
+            <a class="go" href="#book" data-service="Baseline check-up">Book a check-up <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="report" aria-label="Sample results summary">
+            <header>Your summary <i>Sample</i></header>
+            <div class="mk">
+              <div class="mk-top">Vitamin D <em>A little low</em></div>
+              <div class="scale" aria-hidden="true"><i style="--x:18%"></i></div>
+              <p>More daylight and a simple supplement. We'll check again in three months.</p>
+            </div>
+            <div class="mk">
+              <div class="mk-top">Iron stores <em class="ok">In a good range</em></div>
+              <div class="scale" aria-hidden="true"><i style="--x:52%"></i></div>
+              <p>Nothing to do here. Keep eating the way you do.</p>
+            </div>
+            <div class="mk">
+              <div class="mk-top">Cholesterol <em class="watch">Worth watching</em></div>
+              <div class="scale" aria-hidden="true"><i style="--x:79%"></i></div>
+              <p>We'll start with food and movement and look again in six months.</p>
+            </div>
+          </div>
+        </article>
+        <article class="card tile t-labs" data-r style="--d:1">
+          <h3>Lab panels, explained</h3>
+          <p class="big" aria-hidden="true">86</p>
+          <strong>markers in the full panel</strong>
+          <p>Each one comes with a sentence about what it means for you, not a range and a red flag.</p>
+          <ul class="chips" aria-label="Some of the areas covered">
+            <li><span>Blood count</span></li><li><span>Iron</span></li><li><span>Thyroid</span></li><li><span>Vitamin D</span></li><li><span>Blood sugar</span></li><li><span>Cholesterol</span></li><li><span>Kidney &amp; liver</span></li>
+          </ul>
+          <a class="go" href="#book" data-service="Results review">Book a results review <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card tile t-photo t-food" data-r>
+          <div class="ph"><img src="img/nutrition.webp" alt="A bright bowl of grains, greens, citrus and seeds on a blue table" width="1254" height="1254" loading="lazy"></div>
+          <div class="txt">
+            <h3>Nutrition</h3>
+            <p>Sessions with a registered dietitian. No meal plans you'll give up on by Thursday.</p>
+            <a class="go" href="#book" data-service="Nutrition">Book nutrition <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card tile t-photo t-coach" data-r style="--d:1">
+          <div class="ph"><img src="img/coaching.webp" alt="A health coach and a client laughing during a walk in a park" width="1254" height="1254" loading="lazy"></div>
+          <div class="txt">
+            <h3>Health coaching</h3>
+            <p>A coach who checks in every two weeks and answers your messages in between.</p>
+            <a class="go" href="#book" data-service="Coaching">Book coaching <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card tile t-sleep" data-r style="--d:2">
+          <div class="ring" aria-hidden="true"><span><b>7h 12m</b>sample week</span></div>
+          <h3>Sleep &amp; stress</h3>
+          <p>Simple tracking, honest conversations and small changes you can keep through a busy month.</p>
+          <a class="go" href="#book" data-service="Coaching">Talk to a coach <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seq dark" aria-labelledby="seq-h">
+    <h2 class="sr" id="seq-h">Why we started Tamsa</h2>
+    <div class="seq-pin">
+      <img src="img/cells.webp" alt="" width="1600" height="1067" loading="lazy">
+      <span class="seq-count" aria-hidden="true">1</span>
+      <ol class="statements">
+        <li class="on"><span>Most check-ups are over in fifteen minutes.</span></li>
+        <li><span>The results arrive as a page of numbers, some of them in red.</span></li>
+        <li><span>And nobody sits down to tell you which ones matter for you.</span></li>
+        <li><span>So we take ninety minutes, and we explain <em>every line.</em></span></li>
+      </ol>
+      <span class="seq-bar" aria-hidden="true"><i></i></span>
+    </div>
+  </section>
+
+  <section class="sec" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-r>
+          <span class="pill">How a visit works</span>
+          <h2 id="visit-h">Four steps, and you always know <em>what's next.</em></h2>
+        </div>
+        <div data-r style="--d:1"><a class="btn ink" href="#book" data-service="Free intro call">Start with step one <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-photo" data-r>
+          <div class="ph"><img src="img/visit.webp" alt="A clinician and a patient talking and smiling across a round table" width="1024" height="1536" loading="lazy"></div>
+          <div class="slot" aria-hidden="true"><span class="dot"></span><div><small>Next free intro call</small><b>Thursday, 8:30</b></div></div>
+        </div>
+        <ol class="steps" id="steps">
+          <li class="step on" data-r>
+            <div class="num" aria-hidden="true">/01</div>
+            <h3>A free intro call</h3>
+            <p>Twenty minutes by phone or video. We listen, answer your questions and suggest where to start.</p>
+            <span class="tag">Free · no commitment</span>
+          </li>
+          <li class="step" data-r>
+            <div class="num" aria-hidden="true">/02</div>
+            <h3>Your first visit</h3>
+            <p>Ninety minutes at the practice: your history, a full physical exam and a blood draw in the same room. Bring old results if you have them.</p>
+            <span class="tag">At the practice · 90 min</span>
+          </li>
+          <li class="step" data-r>
+            <div class="num" aria-hidden="true">/03</div>
+            <h3>Results in plain words</h3>
+            <p>About a week later we sit down for 45 minutes. Every marker explained, and a written summary you keep.</p>
+            <span class="tag">In person or video · 45 min</span>
+          </li>
+          <li class="step" data-r>
+            <div class="num" aria-hidden="true">/04</div>
+            <h3>Your plan, and someone to text</h3>
+            <p>Small steps for food, sleep and movement, a date for follow-up tests, and a coach who checks in on how it's going.</p>
+            <span class="tag">Messages answered within a working day</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight" id="team" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-r>
+          <span class="pill">The team</span>
+          <h2 id="team-h">The people <em>you'll see.</em></h2>
+        </div>
+        <p class="lead" data-r style="--d:1">Four of the people behind your visits. Each of them sees patients every week, including the founder.</p>
+      </div>
+      <div class="team">
+        <article class="person" data-r>
+          <div class="ph"><img src="img/team-amara.webp" alt="Portrait of Dr. Amara Okonji, a smiling physician in her forties" width="800" height="1200" loading="lazy"></div>
+          <h3>Dr. Amara Okonji</h3>
+          <p class="role">Founder · Physician</p>
+          <ul class="tags"><li>Check-ups</li><li>Women's health</li><li>Lab reviews</li></ul>
+          <p>Ten years in a busy city practice taught her that most visits are too short. She started Tamsa to make them longer.</p>
+        </article>
+        <article class="person" data-r style="--d:1">
+          <div class="ph"><img src="img/team-priya.webp" alt="Portrait of Dr. Priya Raman, a preventive medicine doctor in her fifties" width="800" height="1200" loading="lazy"></div>
+          <h3>Dr. Priya Raman</h3>
+          <p class="role">Preventive medicine</p>
+          <ul class="tags"><li>Heart health</li><li>Healthy ageing</li></ul>
+          <p>Leads our results reviews. Likes a tidy spreadsheet and a long walk, in that order.</p>
+        </article>
+        <article class="person" data-r style="--d:2">
+          <div class="ph"><img src="img/team-jonas.webp" alt="Portrait of Jonas Lindqvist, a dietitian in his thirties" width="800" height="1200" loading="lazy"></div>
+          <h3>Jonas Lindqvist</h3>
+          <p class="role">Registered dietitian</p>
+          <ul class="tags"><li>Nutrition</li><li>Digestion</li><li>Sport</li></ul>
+          <p>Builds plans around what's already in your fridge, then changes two things at a time.</p>
+        </article>
+        <article class="person" data-r style="--d:3">
+          <div class="ph"><img src="img/team-teo.webp" alt="Portrait of Teo Marín, a health coach in his late twenties" width="800" height="1200" loading="lazy"></div>
+          <h3>Teo Marín</h3>
+          <p class="role">Health coach</p>
+          <ul class="tags"><li>Sleep</li><li>Strength</li><li>Habits</li></ul>
+          <p>Will ask how your week went and actually want to know. Answers most messages before lunch.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight" id="plans" aria-labelledby="plans-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-r>
+          <span class="pill">Membership</span>
+          <h2 id="plans-h">Plans with <em>no small print.</em></h2>
+          <p class="lead">Start with one check-up, or join and keep the same team all year. Lab fees are included in every plan.</p>
+        </div>
+        <div class="toggle" role="group" aria-label="Billing" data-r style="--d:1">
+          <button type="button" aria-pressed="true" data-bill="m">Monthly</button>
+          <button type="button" aria-pressed="false" data-bill="y">Yearly <small>2 months free</small></button>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="card plan" data-r>
+          <div class="pname"><h3>Baseline</h3></div>
+          <p class="for">For a clear picture, once.</p>
+          <div class="price"><b>$450</b><span>one visit</span></div>
+          <p class="price-note">Paid once, no membership</p>
+          <ul>
+            <li>90-minute first visit</li>
+            <li>86-marker lab panel</li>
+            <li>45-minute results review</li>
+            <li>Written summary and plan</li>
+          </ul>
+          <a class="btn out" href="#book" data-service="Baseline check-up">Book a check-up</a>
+        </article>
+        <article class="card plan feat" data-r style="--d:1">
+          <div class="pname"><h3>Member</h3><span class="badge">Most chosen</span></div>
+          <p class="for">For steady care all year.</p>
+          <div class="price"><b data-m="$119" data-y="$1,190">$119</b><span data-m="a month" data-y="a year">a month</span></div>
+          <p class="price-note" data-m="Cancel with 30 days' notice" data-y="That's $99 a month">Cancel with 30 days' notice</p>
+          <ul>
+            <li>The Baseline check-up, every year</li>
+            <li>Follow-up labs at six months</li>
+            <li>Four clinician visits a year</li>
+            <li>Coach check-ins every two weeks</li>
+            <li>Message your team on weekdays</li>
+          </ul>
+          <a class="btn" href="#book" data-service="Membership">Become a member <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+        <article class="card plan" data-r style="--d:2">
+          <div class="pname"><h3>Member Plus</h3></div>
+          <p class="for">For a closer eye and more support.</p>
+          <div class="price"><b data-m="$199" data-y="$1,990">$199</b><span data-m="a month" data-y="a year">a month</span></div>
+          <p class="price-note" data-m="Cancel with 30 days' notice" data-y="That's $166 a month">Cancel with 30 days' notice</p>
+          <ul>
+            <li>Everything in Member</li>
+            <li>Lab panels every three months</li>
+            <li>A monthly dietitian session</li>
+            <li>Sleep and strength programme</li>
+            <li>Same-week appointments</li>
+          </ul>
+          <a class="btn ink" href="#book" data-service="Membership">Talk to us first</a>
+        </article>
+      </div>
+      <p class="fine" data-r>Tamsa works alongside your family doctor and is not an emergency service. If you feel unwell suddenly, call your local emergency number.</p>
+    </div>
+  </section>
+
+  <section class="sec tight" id="reviews" aria-labelledby="rv-h">
+    <div class="wrap">
+      <div class="rv-head">
+        <div data-r>
+          <span class="pill">Members</span>
+          <h2 id="rv-h" style="margin-top:18px">What members <em>tell us.</em></h2>
+        </div>
+        <div class="rating" data-r style="--d:1">
+          <div><b>4.9</b><span><span class="stars" aria-hidden="true">★★★★★</span><br>average from member surveys</span></div>
+          <div><b>96%</b><span>would recommend<br>us to a friend</span></div>
+        </div>
+      </div>
+      <div class="track" id="track" role="region" tabindex="0" aria-label="Member reviews, scroll sideways">
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>Finally understood my results</h3>
+          <blockquote>I'd had blood tests every year for a decade and never knew what any of it meant. Dr. Raman went through every line. I left with three things to do, not thirty.</blockquote>
+          <footer><i aria-hidden="true">H</i><div><b>Hannah K.</b><span>Member since 2024</span></div></footer>
+        </article>
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>Nobody rushed me</h3>
+          <blockquote>The first visit was ninety minutes and it didn't feel long. No doctor had ever asked about my sleep before asking about my cholesterol.</blockquote>
+          <footer><i aria-hidden="true">M</i><div><b>Marcus O.</b><span>Baseline check-up</span></div></footer>
+        </article>
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>The coach makes the difference</h3>
+          <blockquote>Teo texts me on Monday mornings. That's the whole secret. I walk more because someone asks.</blockquote>
+          <footer><i aria-hidden="true">I</i><div><b>Ines R.</b><span>Member since 2023</span></div></footer>
+        </article>
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>Food advice I can use</h3>
+          <blockquote>Jonas didn't hand me a diet. He looked at what I already cook and changed two things. I've kept both.</blockquote>
+          <footer><i aria-hidden="true">D</i><div><b>Daniel W.</b><span>Member Plus</span></div></footer>
+        </article>
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>Easy from the first click</h3>
+          <blockquote>Sent the form on a Sunday night and spoke to someone on Tuesday. Clear prices, no surprises on the receipt.</blockquote>
+          <footer><i aria-hidden="true">S</i><div><b>Sofia P.</b><span>Baseline check-up</span></div></footer>
+        </article>
+        <article class="card review">
+          <span class="stars" aria-label="5 out of 5">★★★★★</span>
+          <h3>Good for my dad too</h3>
+          <blockquote>I gave my father a check-up for his seventieth. He grumbled the whole way there, then asked when the next one is.</blockquote>
+          <footer><i aria-hidden="true">R</i><div><b>Ravi S.</b><span>Member since 2025</span></div></footer>
+        </article>
+      </div>
+      <div class="rv-nav" style="margin-top:22px">
+        <button type="button" data-dir="-1" aria-label="Previous reviews" aria-controls="track">←</button>
+        <button type="button" data-dir="1" aria-label="Next reviews" aria-controls="track">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight" id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq-grid">
+      <div class="faq-side" data-r>
+        <span class="pill">Questions</span>
+        <h2 id="faq-h" style="margin-top:18px">What people ask <em>first.</em></h2>
+        <div class="help">
+          <p>Still unsure? A real person picks up the phone, Monday to Saturday.</p>
+          <a class="btn ink" href="tel:+15550163318">Call (555) 016-3318</a>
+        </div>
+      </div>
+      <div data-r style="--d:1">
+        <details>
+          <summary><small>Lena from Fairview asks…</small><span>Do I need a referral?</span></summary>
+          <div class="a"><p>No. You can book directly. If you have a family doctor, we'll send them a copy of your summary whenever you ask us to.</p></div>
+        </details>
+        <details>
+          <summary><small>Tom from Westbrook asks…</small><span>Does Tamsa replace my family doctor?</span></summary>
+          <div class="a"><p>No, we work alongside them. We focus on prevention and long visits. Your family doctor stays your first stop when you're ill, and for prescriptions and referrals.</p></div>
+        </details>
+        <details>
+          <summary><small>Aiko from Fairview asks…</small><span>What does "functional medicine" mean here?</span></summary>
+          <div class="a"><p>Looking at the whole picture — sleep, food, stress, movement and family history — next to standard, well-established tests. We don't sell supplements and we don't offer unproven treatments.</p></div>
+        </details>
+        <details>
+          <summary><small>Sam from Millbrook asks…</small><span>Can I use my insurance?</span></summary>
+          <div class="a"><p>We don't bill insurers directly. You get an itemised receipt to send to your insurer yourself, and some plans pay part of it back.</p></div>
+        </details>
+        <details>
+          <summary><small>Grace from Fairview asks…</small><span>Can I pause or cancel my membership?</span></summary>
+          <div class="a"><p>Yes. Monthly plans can be paused or cancelled with 30 days' notice. Yearly plans are refunded for the full months you haven't used.</p></div>
+        </details>
+        <details>
+          <summary><small>Omar from Westbrook asks…</small><span>How do I prepare for the first visit?</span></summary>
+          <div class="a"><p>Eat as usual unless we tell you otherwise, bring any results from the past year, and wear something with sleeves that roll up easily.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec book dark" id="book" aria-labelledby="book-h">
+    <div class="wrap book-grid">
+      <div data-r>
+        <span class="pill">Book</span>
+        <h2 id="book-h">Your first hour starts with a <em>short note.</em></h2>
+        <p class="lead">Tell us how to reach you and what you'd like help with. We'll call or email within one working day to find a time.</p>
+        <ul class="facts">
+          <li>The intro call is free and takes 20 minutes</li>
+          <li>No referral needed</li>
+          <li>Early mornings and Saturdays available</li>
+        </ul>
+        <div class="reach">
+          <a href="tel:+15550163318">(555) 016-3318</a>
+          <a href="mailto:hello@tamsa.example">hello@tamsa.example</a>
+          <span>88 Larkspur Avenue, Suite 2, Fairview</span>
+        </div>
+      </div>
+      <div data-r style="--d:1">
+        <!-- Formgong form. Replace fk_your_access_key with the access key from your Formgong dashboard. -->
+        <form class="form" id="f-contact" action="https://formgong.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="fk_your_access_key">
+          <input type="hidden" name="subject" value="New appointment request from the Tamsa website">
+          <div class="hp" aria-hidden="true"><label>Leave this field empty<input name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+          <div class="field full"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" required maxlength="100"></div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+          <div class="field"><label for="c-phone">Phone <i>(optional)</i></label><input id="c-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+          <fieldset class="full">
+            <legend>What would you like to book?</legend>
+            <div class="chips">
+              <label><input type="radio" name="service" value="Free intro call" checked><span>Free intro call</span></label>
+              <label><input type="radio" name="service" value="Baseline check-up"><span>Baseline check-up</span></label>
+              <label><input type="radio" name="service" value="Results review"><span>Results review</span></label>
+              <label><input type="radio" name="service" value="Membership"><span>Membership</span></label>
+              <label><input type="radio" name="service" value="Nutrition"><span>Nutrition</span></label>
+              <label><input type="radio" name="service" value="Coaching"><span>Coaching</span></label>
+            </div>
+          </fieldset>
+          <div class="field full"><label for="c-time">Best time to reach you <i>(optional)</i></label>
+            <select id="c-time" name="preferred_time">
+              <option value="Any time">Any time</option>
+              <option value="Weekday morning">Weekday morning</option>
+              <option value="Weekday afternoon">Weekday afternoon</option>
+              <option value="Weekday evening">Weekday evening</option>
+              <option value="Saturday morning">Saturday morning</option>
+            </select>
+          </div>
+          <div class="field full"><label for="c-msg">Anything we should know? <i>(optional)</i></label><textarea id="c-msg" name="message" maxlength="600" aria-describedby="c-hint"></textarea>
+            <p class="hint" id="c-hint">Please don't include medical details here — we'll talk about them in person.</p>
+          </div>
+          <div class="send full">
+            <button class="btn" type="submit"><span data-send-label>Send request</span> <span class="arr" aria-hidden="true">→</span></button>
+            <small>This is a request, not a booked slot. We'll confirm a time with you.</small>
+          </div>
+          <p class="status full" data-status role="status" aria-live="polite"></p>
+          <p class="credit full">Powered by <a href="https://formgong.com" rel="noopener">Formgong</a></p>
+          <div class="thanks" tabindex="-1">
+            <div class="tick" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 7" fill="none" stroke="#0C1838" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Thank you, <span data-name>there</span>.</h3>
+            <p>We've got your request. Someone from the team will call or email within one working day to find a time.</p>
+            <button class="btn out" type="button" data-again>Send another request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#FF6A2B"/><path d="M9 19a7 7 0 0 1 14 0z" fill="#0C1838"/><path d="M6 19h20" stroke="#0C1838" stroke-width="2.4" stroke-linecap="round"/><path d="M10.5 23.5h11" stroke="#0C1838" stroke-width="2.4" stroke-linecap="round"/></svg>tamsa<small>health</small></a>
+        <p style="margin-top:16px;max-width:30ch">Preventive and functional medicine, explained in plain words. A fictional practice for a website template.</p>
+      </div>
+      <div>
+        <h2>Visit</h2>
+        <p>88 Larkspur Avenue, Suite 2<br>Fairview<br>Free parking behind the building</p>
+      </div>
+      <div>
+        <h2>Hours</h2>
+        <ul class="hours">
+          <li><span>Mon–Fri</span><span>7:30–19:00</span></li>
+          <li><span>Saturday</span><span>8:00–13:00</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+15550163318">(555) 016-3318</a></li>
+          <li><a href="mailto:hello@tamsa.example">hello@tamsa.example</a></li>
+          <li><a href="#book">Book a free intro call</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="giant" aria-hidden="true">tamsa<span>.</span></p>
+    <div class="foot-bottom">
+      <p><span data-year>2026</span> © Tamsa Health. Names, reviews and prices are examples. Not medical advice.</p>
+      <p>Template powered by <a href="https://formgong.com" rel="noopener">Formgong</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn" href="#book">Book a free intro call</a>
+  <a class="call" href="tel:+15550163318" aria-label="Call Tamsa Health"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></a>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  // Hero heading: split words so each one rises from a mask.
+  $$("[data-split]").forEach(function (h) {
+    var i = 0;
+    function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
+            var w = document.createElement("span"), s = document.createElement("span");
+            w.className = "w"; s.textContent = part; s.style.setProperty("--i", i++); w.appendChild(s); frag.appendChild(w);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1) { walk(n); }
+      });
+    }
+    walk(h);
+  });
+
+  // Hero counters and stat lines.
+  var ticks = $(".ticks");
+  setTimeout(function () { ticks.classList.add("go"); }, 400);
+  if (!still) {
+    $$("[data-count]").forEach(function (el) {
+      var to = +el.dataset.count, t0 = null;
+      el.textContent = "0";
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / 1600), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(to * e);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      setTimeout(function () { requestAnimationFrame(step); }, 500);
+    });
+  }
+
+  // Menu.
+  var bar = $("#bar"), menuBtn = $(".menu-btn", bar);
+  function setMenu(open) {
+    bar.classList.toggle("open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  menuBtn.addEventListener("click", function () { setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
+  $$("a", bar).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && bar.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
+
+  // Reveal blocks as they enter the viewport.
+  var targets = $$("[data-r], .report");
+  if (!still && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    targets.forEach(function (t) { io.observe(t); });
+  } else {
+    targets.forEach(function (t) { t.classList.add("in"); });
+  }
+
+  // Scroll-driven parts: header, pinned statements, visit steps, mobile dock.
+  var seq = $(".seq"), lines = $$(".statements li"), count = $(".seq-count"), seqBar = $(".seq-bar"), seqImg = $(".seq-pin > img");
+  var steps = $("#steps"), stepItems = $$(".step"), dock = $("#dock"), book = $("#book"), hero = $("#top");
+  var lastY = window.scrollY, ticking = false, current = -1;
+  function clamp(v) { return Math.max(0, Math.min(1, v)); }
+  function update() {
+    ticking = false;
+    var y = window.scrollY, vh = window.innerHeight;
+    bar.classList.toggle("solid", y > hero.offsetHeight - 90);
+    if (!bar.classList.contains("open")) bar.classList.toggle("hide", y > lastY && y > 320);
+    lastY = y;
+
+    if (!still) {
+      var r = seq.getBoundingClientRect();
+      var p = clamp(-r.top / (r.height - vh));
+      var idx = Math.min(lines.length - 1, Math.floor(p * lines.length));
+      if (idx !== current) {
+        lines.forEach(function (li, i) { li.classList.toggle("on", i === idx); li.classList.toggle("past", i < idx); });
+        count.textContent = idx + 1;
+        current = idx;
+      }
+      seqBar.style.setProperty("--p", p.toFixed(3));
+      seqImg.style.setProperty("--z", (1.12 - p * 0.12).toFixed(3));
+
+      var s = steps.getBoundingClientRect(), mark = vh * 0.62;
+      steps.style.setProperty("--p", clamp((mark - s.top) / s.height).toFixed(3));
+      stepItems.forEach(function (li) { li.classList.toggle("on", li.getBoundingClientRect().top < mark); });
+    }
+    if (dock) dock.classList.toggle("show", y > vh * 0.7 && book.getBoundingClientRect().top > vh * 0.9);
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  if (!still) steps.style.setProperty("--p", "0");
+  update();
+
+  // Start-here picker: suggest a starting point.
+  var result = $("#result"), rt = $("[data-rt]", result), rx = $("[data-rx]", result), rb = $("[data-rb]", result);
+  $$("#goals input").forEach(function (input) {
+    input.addEventListener("change", function () {
+      rt.textContent = input.dataset.title; rx.textContent = input.dataset.text; rb.dataset.service = input.dataset.service;
+      if (!still) { result.classList.remove("flash"); void result.offsetWidth; result.classList.add("flash"); }
+    });
+  });
+
+  // Any link with data-service picks that service in the form.
+  var form = $("#f-contact");
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("[data-service]");
+    if (!a) return;
+    var radio = $('input[name="service"][value="' + a.dataset.service + '"]', form);
+    if (radio) radio.checked = true;
+  });
+
+  // Plans: monthly or yearly prices.
+  $$(".toggle button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var mode = b.dataset.bill;
+      $$(".toggle button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      $$(".plans [data-m]").forEach(function (el) { el.textContent = el.dataset[mode]; });
+    });
+  });
+
+  // Reviews: arrows scroll the row by one card.
+  var track = $("#track");
+  $$(".rv-nav button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var card = $(".review", track), gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      track.scrollBy({ left: (+b.dataset.dir) * (card.offsetWidth + gap), behavior: still ? "auto" : "smooth" });
+    });
+  });
+
+  // Form: thanks only when Formgong answers success: true.
+  var button = $('button[type="submit"]', form), label = $("[data-send-label]", form), status = $("[data-status]", form);
+  function say(text, bad) { status.textContent = text; status.classList.toggle("err", !!bad); }
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    button.disabled = true; label.textContent = "Sending…"; say("");
+    var first = (form.elements.namedItem("name").value || "").trim().split(/\s+/)[0];
+    fetch(form.action, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) })
+      .then(function (res) { return res.json().catch(function () { return null; }); })
+      .then(function (result) {
+        if (result && result.success === true) {
+          $("[data-name]", form).textContent = first || "there";
+          form.reset();
+          form.classList.add("is-sent");
+          $(".thanks", form).focus();
+        } else {
+          say((result && result.message) || "Could not send. Please try again in a moment.", true);
+        }
+      })
+      .catch(function () { say("Could not send. Check your connection and try again.", true); })
+      .then(function () { button.disabled = false; label.textContent = "Send request"; });
+  });
+  $("[data-again]", form).addEventListener("click", function () { form.classList.remove("is-sent"); say(""); form.elements.namedItem("name").focus(); });
+})();
+</script>
+</body>
+</html>
