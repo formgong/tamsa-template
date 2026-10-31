@@ -50,6 +50,8 @@ Blocks fade up as they scroll into view. Without JavaScript everything is visibl
 
 **Sample content.** The team, reviews, ratings, prices, numbers, address and phone number are examples. Replace them with your own, and don't publish reviews you did not receive.
 
+The "Powered by Formgong" links point to `https://formgong.com/review-page/fk_your_access_key`, so the same find and replace covers them. Once your key is in, the first click from your published site makes your own public review page on Formgong, where clients read and leave reviews, and every later click opens it. Switch the page off in Formgong (Reviews → your site → Settings) or change those links.
+
 ## Українська
 
 Яскравий односторінковий сайт для практики превентивної або функціональної медицини: один `index.html` і папка `img/`. Практика Tamsa Health, команда, відгуки, ціни й адреса вигадані, це зразковий вміст.
@@ -93,3 +95,5 @@ Blocks fade up as they scroll into view. Without JavaScript everything is visibl
 **Зразковий вміст.** Команда, відгуки, рейтинги, ціни, числа, адреса й телефон — приклади. Замініть їх своїми і не публікуйте відгуків, яких ви не отримували.
 
 MIT license.
+
+Посилання «Powered by Formgong» ведуть на `https://formgong.com/review-page/fk_your_access_key`, тож та сама заміна ключа оновить і їх. Коли ключ стоїть, перший перехід з вашого опублікованого сайту створює вашу публічну сторінку відгуків на Formgong, де клієнти читають і залишають відгуки; далі посилання відкриває її. Вимкнути сторінку можна у Formgong (Відгуки → ваш сайт → Налаштування) або змінити ці посилання.
